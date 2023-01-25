@@ -25,5 +25,12 @@ for(let i=0;i<tag.length;i++){
     tag[i].style.fontSize="30px"
 }
 console.log(tag);
+let second=document.querySelectorAll('.list-group-item');
+second[1].style.backgroundColor="green";
+let odd=document.querySelectorAll('li:nth-child(odd)');
+for(let i=0;i<odd.length;i++){
+    odd[i].style.backgroundColor="green";
+}
+
 
 
