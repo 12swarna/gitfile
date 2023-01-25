@@ -12,3 +12,18 @@ for(let i=0;i<items.length;i++){
     items[i].style.fontWeight="bold";
 }
 console.log(items);
+let items1=document.getElementsByClassName('freedom');
+
+for(let i=0;i<items1.length;i++){
+    items1[i].style.fontWeight="bold";
+    items1[i].style.backgroundColor="Orange";
+
+}
+let tag=document.getElementsByTagName('li');
+for(let i=0;i<tag.length;i++){
+    tag[i].style.fontWeight="bold";
+    tag[i].style.fontSize="30px"
+}
+console.log(tag);
+
+
