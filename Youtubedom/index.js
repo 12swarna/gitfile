@@ -31,6 +31,27 @@ let odd=document.querySelectorAll('li:nth-child(odd)');
 for(let i=0;i<odd.length;i++){
     odd[i].style.backgroundColor="green";
 }
+let newdiv=document.createElement("div");
+console.log(newdiv);
+newdiv.id="newid";
+newdiv.className="divclass";
+newdiv.setAttribute('title','swarna');
+let text=document.createTextNode("hello world");
+newdiv.append(text);
+let container=document.querySelector('header .container');
+let h1=document.querySelector('header h1')
+container.insertBefore(newdiv,h1);
+
+let list=document.createElement("li");
+console.log(list);
+list.className="list-group-item";
+let newtext=document.createTextNode("hello world");
+list.appendChild(newtext);
+let a=document.getElementById('items');
+
+a.innerHTML="<li>hello world</li> " + a.innerHTML;
+console.log(a);
+
 
 
 
