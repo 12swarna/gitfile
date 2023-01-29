@@ -21,8 +21,8 @@
 let newForm = document.querySelector("#thisform");
 let nameInput = document.querySelector('#name');
 let email = document.querySelector('#email');
-let users = document.querySelector('#users');
-let message = document.querySelector('.msg')
+//let users = document.querySelector('#users');//
+//let message = document.querySelector('.msg')//
 console.log(email);
 newForm.addEventListener("submit", onSubmit);
 function onSubmit(e) {
@@ -30,7 +30,23 @@ function onSubmit(e) {
 
     console.log(nameInput.value, email.value);
     localStorage.setItem(nameInput.value,email.value);
-    console.log(` ${nameInput.value} ${localStorage.getItem(nameInput.value)}`)
+    //(` ${nameInput.value} ${localStorage.getItem(nameInput.value)}`)//
 
 }
+//adding object in local storage//
+const person = {
+    newName :"priya",
+    age :20,
+    adharNo:404060,
+    roll_no:13,
+    adress:"Jharkhand"
+};
+let stringPerson=JSON.stringify(person);//using stringify it convert into string//
+//console.log(stringPerson);//
+localStorage.setItem("person",stringPerson);//using this we can set the value in local //
+//console.log(localStorage);//
+let so=JSON.parse(localStorage.getItem("person"));//using this we can get the value in console//
+//console.log(so);//
+
+
 
