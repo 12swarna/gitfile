@@ -17,36 +17,53 @@
 //     e.preventDefault();
 //     console.log("5");
 
-// });
-let newForm = document.querySelector("#thisform");
-let nameInput = document.querySelector('#name');
-let email = document.querySelector('#email');
-//let users = document.querySelector('#users');//
-//let message = document.querySelector('.msg')//
-console.log(email);
-newForm.addEventListener("submit", onSubmit);
-function onSubmit(e) {
-    e.preventDefault();
+// });s
+ //let newForm = document.querySelector("#thisform");//
+// let names = document.querySelector('#name');
+// let emails = document.querySelector('#email');
+ newForm.addEventListener("submit", savedToLocal);
 
-    console.log(nameInput.value, email.value);
-    localStorage.setItem(nameInput.value,email.value);
-    //(` ${nameInput.value} ${localStorage.getItem(nameInput.value)}`)//
+function savedToLocal(event) {
+    event.preventDefault();
+
+    //console.log(names.value, emails.value);//
+    // localStorage.setItem(namesSwa.value,emails.value);//
+    //adding object in localstorage//
+    let names = event.target.swarna.value;
+    let emails = event.target.swarnaemail.value;
+    const userDetails = {
+        names: names,
+        emails: emails
+
+    }
+    localStorage.setItem(userDetails.emails, JSON.stringify(userDetails));
+    //console.log(localStorage);//
+
+
+    //showUserOnScreen(userDetails);//
+    showUserOnScreen(userDetails);
+
+
 
 }
-//adding object in local storage//
-const person = {
-    newName :"priya",
-    age :20,
-    adharNo:404060,
-    roll_no:13,
-    adress:"Jharkhand"
-};
-let stringPerson=JSON.stringify(person);//using stringify it convert into string//
-//console.log(stringPerson);//
-localStorage.setItem("person",stringPerson);//using this we can set the value in local //
-//console.log(localStorage);//
-let so=JSON.parse(localStorage.getItem("person"));//using this we can get the value in console//
-//console.log(so);//
+
+function showUserOnScreen(userDetails) {
+
+    let parentE = document.getElementById("users");
+    parentE.innerHTML = parentE.innerHTML + `<li>${userDetails.names} -${userDetails.emails}</li>`
+
+
+
+}
+
+
+
+
+
+
+
+
+
 
 
 
