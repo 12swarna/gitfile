@@ -65,8 +65,25 @@ butto.onclick=() =>{
     parentE.removeChild(childEle);
 
 }
+
+//adding edit button//
+  
+let editButton=document.createElement("input");
+editButton.type="button"
+editButton.value="Edit";
+console.log(editButton);
+parentE.appendChild(editButton);
+editButton.onclick=() =>{
+    localStorage.removeItem(userDetails.emails)
+    parentE.removeChild(childEle);
+    document.getElementById("name").value=userDetails.names
+    document.getElementById("email").value=userDetails.emails
+
+}
 childEle.appendChild(butto);
+childEle.appendChild(editButton);
 parentE.appendChild(childEle);
+
     
 
 
