@@ -18,10 +18,10 @@
 //     console.log("5");
 
 // });s
- //let newForm = document.querySelector("#thisform");//
+//let newForm = document.querySelector("#thisform");//
 // let names = document.querySelector('#name');
 // let emails = document.querySelector('#email');
- newForm.addEventListener("submit", savedToLocal);
+//newForm.addEventListener("submit", savedToLocal);//
 
 function savedToLocal(event) {
     event.preventDefault();
@@ -48,13 +48,33 @@ function savedToLocal(event) {
 }
 
 function showUserOnScreen(userDetails) {
+    let parentE=document.getElementById("users");
 
-    let parentE = document.getElementById("users");
-    parentE.innerHTML = parentE.innerHTML + `<li>${userDetails.names} -${userDetails.emails}</li>`
+    let childEle=document.createElement("li");
+    childEle.textContent=userDetails.names+" - "+userDetails.emails+" ";
+    
 
+    
+    let butto=document.createElement("input");
+butto.type="button"
+butto.value="delete";
+console.log(butto);
+parentE.appendChild(butto);
+butto.onclick=() =>{
+    localStorage.removeItem(userDetails.emails)
+    parentE.removeChild(childEle);
+
+}
+childEle.appendChild(butto);
+parentE.appendChild(childEle);
+    
 
 
 }
+
+
+
+
 
 
 
